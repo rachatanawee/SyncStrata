@@ -1,118 +1,210 @@
-<p align="center">
-  <a href="https://vuestic.dev" target="_blank">
-    <img alt="Vuestic UI Logo" width="220" src="./.github/assets/vuestic-admin-logo.png">
-  </a>
-</p>
+Base from https://github.com/epicmaxco/vuestic-admin  
+# SyncStrata
 
-<p align="center">
-  Free and beautiful Admin Template utilizing Vue 3, Vite, Pinia, and Tailwind CSS. Designed for building efficient, responsive, and fast-loading admin interfaces.</br>
-  Developed by  <a href="https://epicmax.co">Epicmax</a>.</br>
-  Based on <a href="https://ui.vuestic.dev">Vuestic UI</a> library.
-</p>
+A modern, feature-rich admin dashboard built with Vue.js, Tailwind CSS, and Strapi CMS. SyncStrata provides a comprehensive solution for managing your application with powerful authentication, role-based permissions, and an intuitive user interface.
 
-<p align="center">
-  <a href="https://admin-demo.vuestic.dev"> Live Demo </a> |
-  <a href="https://admin.vuestic.dev/"> About Vuestic Admin </a> |
-  <a href="https://ui.vuestic.dev/">Vuestic UI documentation</a>
-</p>
+![SyncStrata Dashboard](https://placeholder.com/dashboard-preview.png)
 
-> Vuestic Admin is built with [Vuestic UI](https://ui.vuestic.dev). See our
-> <a href="https://github.com/epicmaxco/vuestic-ui/issues">issues</a>,
-> <a href="https://ui.vuestic.dev/en/contribution/guide">contributing guide</a> and join discussions on our
-> <a href="https://discord.gg/jTKTjj2weV">Discord server</a> to help us improve Vuestic Admin & Vuestic UI experience.
+## Features
 
-<p align="center">
-  <a href="https://admin.vuestic.dev" target="_blank">
-    <img src="./public/vuestic-admin-image.png" align="center" width="888px"/>
-  </a>
-</p>
+### Core Technologies
+- **Vue.js 3**: Utilizing the Composition API for reactive and efficient UI components
+- **Tailwind CSS**: Fully customizable utility-first CSS framework
+- **Strapi CMS**: Headless CMS for flexible content management and API creation
 
-### Quick start
+### User Management
+- **Authentication System**:
+  - JWT-based authentication
+  - Social login integrations (Google, GitHub)
+  - Two-factor authentication (2FA)
+  - Password reset functionality
+  - Session management
 
-Use following command to quickly scaffold new [Vuestic Admin](https://admin-demo.vuestic.dev) or empty Vite or Nuxt project with [Vuestic UI](https://ui.vuestic.dev).
+- **Advanced Permissions**:
+  - Role-based access control (RBAC)
+  - Granular permission settings
+  - Custom user roles creation
+  - API endpoint restrictions
+  - Content-based permissions
 
+### Dashboard Features
+- **Dynamic Layouts**:
+  - Customizable dashboard widgets
+  - Drag-and-drop interface
+  - Responsive design for all devices
+  - Dark/Light mode toggle
+
+- **Data Visualization**:
+  - Interactive charts and graphs
+  - Real-time data updates
+  - Pivot tables for data analysis
+  - Exportable reports (PDF, CSV, Excel)
+
+- **UI Components**:
+  - Syncfusion component integration
+  - Data grids with filtering and sorting
+  - Form builders and validators
+  - Advanced pivot tables
+  - Modal dialogs and notifications
+
+### Developer Experience
+- **API Integration**:
+  - RESTful API endpoints
+  - GraphQL support
+  - Swagger documentation
+  - Rate limiting and caching
+
+- **Performance Optimizations**:
+  - Code splitting
+  - Lazy loading
+  - Server-side rendering options
+  - Optimized build process
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14.0 or higher)
+- npm or yarn
+- Database (PostgreSQL recommended, but MySQL and SQLite also supported)
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm create vuestic@latest
+git clone https://github.com/yourusername/syncstrata.git
+cd syncstrata
 ```
 
-After [Vuestic Admin](https://admin.vuestic.dev) is installed, run `npm install` to install dependcies, then run `npm run dev` to start local development server.
+2. Install dependencies:
+```bash
+# Install frontend dependencies
+cd frontend
+npm install
 
-### Documentation
+# Install backend dependencies
+cd ../backend
+npm install
+```
 
-Documentation, guides, examples and tutorials are available on [ui.vuestic.dev](https://ui.vuestic.dev)
+3. Configure environment variables:
+```bash
+# Frontend .env
+cp frontend/.env.example frontend/.env
 
-### Official Discord Server
+# Backend .env
+cp backend/.env.example backend/.env
+```
 
-Ask questions at the official community [discord server](https://discord.gg/jTKTjj2weV)
+4. Start development servers:
+```bash
+# Start Strapi backend
+cd backend
+npm run develop
 
-### Features
+# Start Vue frontend
+cd frontend
+npm run serve
+```
 
-- **Vue 3, Vite, Pinia, and Tailwind CSS -** Fast and efficient development
-- **Dark Theme -** Modern and eye-catching
-- **Global Configuration -** Effortless customization
-- **Accessibility -** Inclusive and user-friendly
-- **i18n Integration -** Easy localization for global reach
-- **Educational Resource -** Ideal for learning and improving skills
-- **Responsive Design -** Adapts seamlessly to all devices
-- **Professional Support -** Reliable help from the experts
-- **Highly Customizable -** Tailor to your project’s style
+5. Access the application:
+   - Frontend: http://localhost:8080
+   - Strapi Admin: http://localhost:1337/admin
 
-### Contributing
+## Project Structure
 
-Thanks for all your wonderful PRs, issues and ideas.
+```
+syncstrata/
+├── frontend/                  # Vue.js frontend
+│   ├── public/                # Static files
+│   ├── src/
+│   │   ├── assets/            # Images, fonts, etc.
+│   │   ├── components/        # Reusable Vue components
+│   │   ├── layouts/           # Page layouts
+│   │   ├── plugins/           # Vue plugins
+│   │   ├── router/            # Vue Router configuration
+│   │   ├── services/          # API services
+│   │   ├── store/             # Vuex store
+│   │   ├── views/             # Page components
+│   │   ├── App.vue
+│   │   └── main.js
+│   └── package.json
+│
+├── backend/                   # Strapi backend
+│   ├── api/                   # API definitions
+│   ├── config/                # Strapi configuration
+│   ├── extensions/            # Strapi extensions
+│   ├── public/                # Public assets
+│   └── package.json
+│
+└── README.md
+```
 
-<a href="https://github.com/epicmaxco/vuestic-admin/graphs/contributors">
-<img src="https://opencollective.com/vuestic-admin/contributors.svg?width=890&button=false" />
-</a>
-<br>
+## Customization
 
-You’re always welcome to join: check out
-our <a href="https://ui.vuestic.dev/en/contribution/guide">
-contribution guides</a>
-, [open issues](https://github.com/epicmaxco/vuestic-ui/issues)
-and [Discord server](https://discord.gg/jTKTjj2weV)
+### Theming
 
-### Partners & Sponsors ❤️
+SyncStrata comes with a fully customizable theme based on Tailwind CSS. You can modify the theme in the `tailwind.config.js` file:
 
-<img src="./.github/assets/sponsors.png" loading="lazy" alt="Epicmax, vuejobs, ag-grid, flatlogic, browserstack and jetbrains" width="400px">
+```js
+// frontend/tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          light: '#4da6ff',
+          DEFAULT: '#0080ff',
+          dark: '#0066cc',
+        },
+        // Add your custom colors here
+      },
+    },
+  },
+  // ...
+}
+```
 
-Become a partner: [hello@epicmax.co](mailto:hello@epicmax.co)
+### Adding New Features
 
-### Can I hire you guys?
+The modular architecture allows for easy extension of functionality:
 
-[Epicmax](https://epicmax.co) is committed to Open Source from its beginning. Vuestic Admin was created and backed by Epicmax, and is supported through all the years.
+1. Create new Strapi content types in the backend
+2. Generate corresponding API endpoints
+3. Develop Vue components to interact with the new data
+4. Add new routes in the Vue Router configuration
 
-With 6+ years of dedicated work on both commercial and open-source projects, and more than 47 clients worldwide across various fields, Epicmax has deep expertise in frontend development, especially in Vue.js. We regularly conduct code audits for our projects and now excited to offer this service not only to our existing clients but to anyone looking to understand the state of their frontend code and ensure it's secure and up-to-date!
+## Deployment
 
-You can request a consultation or order web development services by Epicmax via this [form](https://epicmax.co/contacts) 😎
+### Frontend Deployment
 
-Say hi: <a href="mailto:hello@epicmax.co">hello@epicmax.co</a>. We will be happy to work with you!
+```bash
+cd frontend
+npm run build
+```
 
-[Other work](https://epicmax.co) we’ve done 🤘
+This will generate a production-ready build in the `frontend/dist` directory, which can be deployed to services like Netlify, Vercel, or any static hosting service.
 
-[Meet the Team](https://ui.vuestic.dev/introduction/team)
+### Backend Deployment
 
-### Awards
+Follow the [Strapi deployment guide](https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/deployment.html) for deploying the Strapi backend to your preferred hosting platform.
 
-<a href="https://flatlogic.com/templates/vuestic-vue-free-admin" target="_blank">
-    <img src="https://i.imgur.com/ZeQPZ3Q.png" align="center" width="150px"/>
-</a>
-<p>
-  By <a href="https://flatlogic.com/templates/vuestic-vue-free-admin" target="_blank">@flatlogic</a> marketplace
-</p>
+## Contributing
 
-### Premium Support and Consulting
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Get Premium Support & Consulting services through our official development partner, Epicmax. As the main contributor to Vuestic UI and Vuestic Admin, Epicmax brings a wealth of expertise and experience to help you achieve your project goals efficiently and effectively.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-[Get a quote](https://www.epicmax.co/?ref=vuestic-consulting)
+## License
 
-### Follow us
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Stay up to date with the latest Vuestic news! Follow us
-on [Twitter](https://twitter.com/vuestic_ui)
-or [Linkedin](https://www.linkedin.com/company/18509340)
+## Acknowledgements
 
-### License
-
-[MIT](https://github.com/epicmaxco/vuestic-admin/blob/master/LICENSE) license.
+- [Vue.js](https://vuejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Strapi](https://strapi.io/)
+- [Syncfusion Components](https://www.syncfusion.com/)
